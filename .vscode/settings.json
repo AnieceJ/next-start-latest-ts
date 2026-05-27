@@ -29,7 +29,15 @@
   "workbench.colorCustomizations": {
     "activityBar.background": "#083b49",
     "titleBar.activeBackground": "#083b49",
-    "titleBar.activeForeground": "#FEFBFC"
+    "titleBar.activeForeground": "#FEFBFC",
+    "titleBar.inactiveBackground": "#07323E",
+    "titleBar.inactiveForeground": "#F6FCFE",
+    "statusBar.background": "#07323E",
+    "statusBar.foreground": "#F6FCFE",
+    "statusBar.debuggingBackground": "#07323E",
+    "statusBar.debuggingForeground": "#F6FCFE",
+    "statusBar.noFolderBackground": "#07323E",
+    "statusBar.noFolderForeground": "#F6FCFE"
   },
   "tailwindCSS.includeLanguages": {
     "typescript": "html",
