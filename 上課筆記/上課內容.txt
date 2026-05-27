@@ -1,0 +1,33 @@
+=====================
+====== 建置環境 ======
+1. 確認node版本 : node -v
+2. 在chrome安裝擴充程式React Developer Tools並釘選(如果網站是用React寫的就會亮起來)
+3. 在老師的github - 用fork或下載檔案, 弄出自己的儲存庫
+4. 專案資料夾絕對不能放在雲端硬碟(如iCloud的磁碟)(雲端硬碟絕對會壞掉)
+5. cd至主資料夾
+6. pnpm install安裝套件
+7. pnpm run dev 打開Next.js
+====== 建置環境 ======
+=====================
+
+-- Ai api key --
+如何用api key?(sk-23d60fdcc9954737b13d2face59eb11d 老師課堂結束就會刪除)
+
+AI api key
+1. Kilo Code Ai - VS Code模組
+2. 在Ai介面輸入 /settings 打開設定
+3. 按供應商 - 查看更多供應商 - 輸入 DeepSeek 並點擊 - 輸入api金鑰
+4. 選模型 - 預設模型 - 搜尋模型輸入 deep 選 DeepSeek V4 Flash
+5. 選下面的code - 一樣選DeepSeek V4 Flash (修改預設模型與Code)
+6. 按右下角儲存
+如果Ai對話窗出現在左邊,想移動到右邊的話:
+問Ai好了
+-最上面工具列
+-檢視
+-開啟命令選擇區 
+-輸入move 
+-選檢視:移動檢視 
+-找到kilo code 
+-選新增提要欄位項目
+
+-- Ai api key --
