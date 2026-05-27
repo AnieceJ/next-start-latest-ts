@@ -30,3 +30,11 @@ AI api key
 -選新增提要欄位項目
 
 -- Ai api key --
+
+專案裡面最重要的是app資料夾
+public裡面放圖片(svg等等)
+
+打開伺服器後在終端出現的localhost,連上瀏覽器之後選components(React的), 裡面出現的東西是 /app/page.tsx 產出的東西d
+
+至於VsCode模組的ESlint : 這是一個會報錯抓bug的模組, 非常煩人(要習慣)
+還有error lens : 容易跳出一堆錯誤的模組(可用可不用)
