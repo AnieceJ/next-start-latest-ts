@@ -15,8 +15,8 @@ import { useState } from 'react';
 export default function CounterPage() {
   // 使用 useState Hook 來管理計數器的數值
   // useState 回傳一個陣列，包含兩個元素：
-  // [0] count: 目前的狀態值
-  // [1] setCount: 用來更新狀態的函式
+  // [0] count: 目前的狀態值(狀態變數)
+  // [1] setCount: 用來更新狀態的函式(設定方法)
   // 參數 0 是 count 的初始值
   // 陣列解構指定值語法(array destructuring assignment)
   const [count, setCount] = useState(0);
@@ -24,7 +24,7 @@ export default function CounterPage() {
   // 回傳 JSX，return代表這個元件的渲染(render)結果
   return (
     <>
-      {/* 使用花括號 {} 來嵌入 JavaScript 表達式 */}
+      {/* 使用花括號 {} 來嵌入 JavaScript 表達式, 也可以放函式*/}
       {/* 這裡顯示 count 的目前值 */}
       <h1>{count}</h1>
 
