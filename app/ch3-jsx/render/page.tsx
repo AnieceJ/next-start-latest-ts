@@ -7,15 +7,11 @@ export default function RenderPage() {
       <hr />
       <h2>數字number</h2>
       {1 - 1}
-      <br />
       {NaN}
-      <br />
       <h2>字串string</h2>
       這是字串
-      <br />
       {'這也是字串'}
-      <br />
-      {`這還是字串`}
+      {`這也是${1 + 1}字串`}
     </>
   );
 }

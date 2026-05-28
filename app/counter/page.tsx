@@ -3,8 +3,8 @@
 // 因為它包含互動功能（按鈕點擊），所以必須在客戶端運行
 'use client';
 
-// 勾子只能在客戶端元件(RCC)中使用
-// Hook 是 React 的特殊函式，名稱都以 'use' 開頭
+// "勾子"只能在客戶端元件(RCC)中使用
+// "Hook" 是 React 的特殊函式，名稱都以 'use' 開頭
 // useState 讓函式型元件能夠使用和管理狀態（資料）
 import { useState } from 'react';
 
