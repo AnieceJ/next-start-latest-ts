@@ -23,6 +23,8 @@ export default function RenderPage() {
       {/* 以下不會渲染呈現 */}
       {null}
       {undefined}
+      <h2>陣列array</h2>
+      <h2>物件object</h2>
     </>
   );
 }
