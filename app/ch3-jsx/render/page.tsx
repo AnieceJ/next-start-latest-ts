@@ -7,11 +7,22 @@ export default function RenderPage() {
       <hr />
       <h2>數字number</h2>
       {1 - 1}
+      <br />
       {NaN}
       <h2>字串string</h2>
       這是字串
+      <br />
       {'這也是字串'}
+      <br />
       {`這也是${1 + 1}字串`}
+      <h2>布林值boolean</h2>
+      {/* 以下不會渲染呈現 */}
+      {true}
+      {false}
+      <h2>null/undefined</h2>
+      {/* 以下不會渲染呈現 */}
+      {null}
+      {undefined}
     </>
   );
 }
