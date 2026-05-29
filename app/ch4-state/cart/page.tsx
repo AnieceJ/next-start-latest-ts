@@ -23,7 +23,7 @@ const initialProducts = [
 export default function ShoppingCart() {
   const [products, setProducts] = useState(initialProducts);
 
-  // v1 用最基本的想法來作物件陣列狀態的更新
+  // v1 基本的三步驟流程，作物件陣列狀態的更新
   function handleIncreaseClick(productId: any) {
     // 1. 從現有的狀態拷貝出一個新的複本
     // const nextProducts = [...products] //這種寫法不行, 因為深度有兩層(除非他是單純只有一個物件), 這叫淺拷貝(只能拷貝一層), 超過一層以上無法用展開運算子來拷貝
@@ -41,9 +41,9 @@ export default function ShoppingCart() {
     }
   }
 
-  // v2 改用map來作更新物件陣列狀態的動作
+  // v2 改用map來作更新物件陣列狀態
   function handleIncrease2(productId: any) {
-    // 用map方法來作1、2步
+    // 1、2步用map方法來作
     const nextProducts = products.map((product) => {
       // 對符合條件的物件增加數量(count)
       if (product.id === productId)
@@ -55,7 +55,7 @@ export default function ShoppingCart() {
     setProducts(nextProducts);
   }
 
-  // v3 改用map來作更動，更簡潔的語法
+  // v3 改用map更動，最簡潔的語法
   function handleIncrease3(productId: any) {
     setProducts(
       products.map((v) =>
@@ -64,22 +64,42 @@ export default function ShoppingCart() {
     );
   }
 
-  function handleDecrease(productId: any){
-    setProducts(
-      products.map((v)=>
-        v.id === productId ? { ...v, count: v.count - 1 } : v
-      )
-    );
+  function handleDecrease(productId: any) {
+    // 1、2步用map方法來作
+    const nextProducts = products.map((product) => {
+      // 對符合條件的物件減少數量(count)
+      if (product.id === productId)
+        return { ...product, count: product.count - 1 };
+      else return product;
+    });
+
+    // 3. 呼叫set方法設定給狀態
+    setProducts(nextProducts);
   }
 
-  function handleRemove(productId: any){
-    const nextProducts = JSON.parse(JSON.stringify(products)); //
+  // v1 基本的三步驟流程，作物件陣列狀態的刪除(splice方法)
+  function handleRemove1(productId: any) {
+    // 1. 從現有的狀態拷貝出一個新的複本
+    // 深拷貝語法(超過一層以上無法用`...`(展開運算子)來拷貝)
+    const nextProducts = JSON.parse(JSON.stringify(products));
+    // 2. 在複本上作修改
+    // 找它是在陣列的哪一個
     const foundIndex = nextProducts.findIndex((v: any) => v.id === productId);
+    // 如果有找到
     if (foundIndex !== -1) {
-      nextProducts[foundIndex].count++;
+      // 找到後把這個物件刪除
+      nextProducts.splice(foundIndex, 1);
+      // 3. 呼叫set方法設定給狀態
       setProducts(nextProducts);
     }
   }
+
+  // v2 用filter來作刪除
+  function handleRemove2(productId: any) {
+    // 新的狀態物件陣列裡不會有存在要被刪除的商品
+    const nextProducts = products.filter((product) => product.id !== productId);
+    // 3. 呼叫set方法設定給狀態
+    setProducts(nextProducts);
   }
 
   return (
@@ -96,17 +116,25 @@ export default function ShoppingCart() {
           </button>
           <button
             onClick={() => {
-              handleDecrease(product.id);
+              if (product.count === 1) {
+                if (confirm('你確定要刪除這個商品嗎？')) {
+                  handleRemove2(product.id);
+                }
+              } else {
+                handleDecrease(product.id);
+              }
             }}
           >
             -
           </button>
           <button
             onClick={() => {
-              handleDecrease(product.id);
+              if (confirm('你確定要刪除這個商品嗎？')) {
+                handleRemove2(product.id);
+              }
             }}
           >
-            X
+            x
           </button>
         </li>
       ))}
