@@ -127,3 +127,12 @@ TypeScript 提供陣列和 key 屬性的型別檢查
 === key屬性值與map使用搭配 ===
 
 call(回呼), run(執行), invoke(召喚) => 都是一樣意思
+
+co-location
+
+為什麼檔案要加底線?(例如proj/product-v1裡面的_data跟_styles)
+從路由系統裡面排除掉
+從外面是讀不到的
+- 私有資料夾
+- 這樣就能保證在網址打路由時能只單純讀到page.tsx
+- 目的是讓其他的小元件(_data, _styles)不被讀到, 不讓他們干擾  
