@@ -182,3 +182,13 @@ Immutable object 不可改變物件:
 一旦某個值成為state(狀態)後, 他的值將無法被改變
 
 至於狀態可以被改變的物件, 被稱為可變物件(mutable object)
+
+-- Object Array --
+Create(Add) 新增時用 -> [...]
+Delete 刪除時用 -> filter
+Update 更新時用 -> map
+
+    const nextProducts = products.map((product)=>{
+      return product;
+    });
+    // 等同於做 const nextProducts = [...products]拷貝出來新陣列
