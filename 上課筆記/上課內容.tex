@@ -136,3 +136,8 @@ co-location
 - 私有資料夾
 - 這樣就能保證在網址打路由時能只單純讀到page.tsx
 - 目的是讓其他的小元件(_data, _styles)不被讀到, 不讓他們干擾  
+
+
+Image是Next優化圖片的自帶套件,
+如果在map裡面直接加入Image會跳錯(Next不允許連外)
+要改next.config.ts做設定(允許)
