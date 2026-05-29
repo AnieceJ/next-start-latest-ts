@@ -29,10 +29,10 @@ export default function ProductTablePage() {
                 <td>{product.id}</td>
                 <td>
                   <Image
-                  src={product.image_url}
-                  width={100}
-                  height={100}
-                  alt={product.id}
+                    src={product.image_url}
+                    width={100}
+                    height={100}
+                    alt={product.name}
                   />
                 </td>
                 <td>{product.name}</td>

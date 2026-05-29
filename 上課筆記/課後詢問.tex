@@ -12,9 +12,36 @@ React跟Next.js實際上的關係?
 
 ch3-jsx/render的內容詢問
 
+5/28
 React基礎章節:
 JSX
 State
 Props
 Form + ref
 Life cycle(effect) + api
+
+5/29
+****************************
+Image是Next優化圖片的自帶套件,
+如果在map裡面直接加入Image會跳錯(Next不允許連外, 這裡示範檔是連結外部網路圖片的)
+要改next.config.ts做設定(允許)
+
+(next.config.ts)設定:
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  },
+};
+
+export default nextConfig;
+****************************
+
+if流程控制的表達式語法 - 使用邏輯與&&
+常用? 閱讀性? 造成混亂?
