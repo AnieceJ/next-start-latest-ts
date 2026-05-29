@@ -64,6 +64,24 @@ export default function ShoppingCart() {
     );
   }
 
+  function handleDecrease(productId: any){
+    setProducts(
+      products.map((v)=>
+        v.id === productId ? { ...v, count: v.count - 1 } : v
+      )
+    );
+  }
+
+  function handleRemove(productId: any){
+    const nextProducts = JSON.parse(JSON.stringify(products)); //
+    const foundIndex = nextProducts.findIndex((v: any) => v.id === productId);
+    if (foundIndex !== -1) {
+      nextProducts[foundIndex].count++;
+      setProducts(nextProducts);
+    }
+  }
+  }
+
   return (
     <ul>
       {products.map((product) => (
@@ -75,6 +93,20 @@ export default function ShoppingCart() {
             }}
           >
             +
+          </button>
+          <button
+            onClick={() => {
+              handleDecrease(product.id);
+            }}
+          >
+            -
+          </button>
+          <button
+            onClick={() => {
+              handleDecrease(product.id);
+            }}
+          >
+            X
           </button>
         </li>
       ))}
