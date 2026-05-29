@@ -23,13 +23,8 @@ const initialProducts = [
 export default function ShoppingCart() {
   const [products, setProducts] = useState(initialProducts);
 
-<<<<<<< HEAD
-  // v1 用最基本的想法來做物件陣列狀態的更新
-  function handleIncreaseClick(productId) {
-=======
   // v1 用最基本的想法來作物件陣列狀態的更新
   function handleIncreaseClick(productId: any) {
->>>>>>> upstream
     // 1. 從現有的狀態拷貝出一個新的複本
     // const nextProducts = [...products] //這種寫法不行, 因為深度有兩層(除非他是單純只有一個物件), 這叫淺拷貝(只能拷貝一層), 超過一層以上無法用展開運算子來拷貝
     // 使用深拷貝語法 :
