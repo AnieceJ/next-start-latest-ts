@@ -37,6 +37,7 @@ export default function Child({
       <p>oa={JSON.stringify(oa)}</p>
       <p>sum(1,2)={sum(1, 2)}</p>
       {/* JSX語法 */}
+      <p>jsx={jsx}</p>
     </>
   );
 }
