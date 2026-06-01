@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect, Profiler } from 'react';
+import { useState } from 'react';
+import { produce } from 'immer';
 
 export default function ImmerPage() {
   const [user, setUser] = useState({
@@ -21,7 +22,10 @@ export default function ImmerPage() {
       {/* 手動更動 */}
       <button
         onClick={() => {
-          const nextUser = { ...user, name: '李四' };
+          const nextUser = produce(user, (draftState) => {
+            // 可將draftState視為深拷貝得到的複本(實際為代理樣式)
+            draftState.name = '李四';
+          });
           setUser(nextUser);
         }}
       >
