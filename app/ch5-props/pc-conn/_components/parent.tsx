@@ -1,7 +1,7 @@
 'use client';
 
-import ChildA from './child-A';
-import ChildB from './child-B';
+import ChildA from './child-a';
+import ChildB from './child-b';
 
 export default function Parent() {
   return (
