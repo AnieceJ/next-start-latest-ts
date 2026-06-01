@@ -29,6 +29,23 @@ export default function TodoPage() {
         onChange={(e) => {
           setInputText(e.target.value);
         }}
+        // 按下Enter鍵要出發加入到todos
+        onKeyDown={(e) => {
+          // 按下Enter而且文字輸入框不是空白
+          if (e.key === 'Enter' && inputText.trim()) {
+            // 建立新的todo
+            const newTodo = {
+              id: Date.now(),
+              text: inputText,
+            };
+            const nextTodos = [newTodo, ...todos];
+
+            setTodos(nextTodos);
+
+            // 送出後清除文字輸入框
+            setInputText('');
+          }
+        }}
       />
       <ul>
         {todos.map((todo) => {
