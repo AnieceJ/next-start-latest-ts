@@ -215,3 +215,28 @@ Property(-ies) ->  JSX  -> 用於物件的屬性(屬性本身就是物件)
 
 DRY 不要重複你自己
 SRP 單一職責原則, 獨特性 : 重複利用的元件(比如搜尋, 登入按鈕等等)
+
+-- --
+export interface ParentProps {
+  children: ReactNode;
+}
+
+
+export default function Parent({ children }: ParentProps) {
+  return (
+    <>
+      <div style={{ color: 'red', fontSize: 30, border: '1px sold #ccc' }}
+      >
+        {children}
+      </div>
+    </>
+  );
+}
+
+解釋 :
+function Parent({ children }: ParentProps)
+這邊的children就是設定一個X給他,
+
+interface這邊就是設定X的型別
+
+然後div裡面包的就是這個X, 再送到page.tsx裡面
