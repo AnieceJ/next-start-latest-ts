@@ -3,16 +3,13 @@
 import { ReactNode } from 'react';
 
 export interface ParentProps {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export default function Parent({ children }: ParentProps) {
   return (
     <>
-      <div style={{ color: 'red', fontSize: 30, border: '1px sold #ccc' }}
-      >
-        {children}
-      </div>
+      <div style={{ color: 'red', fontSize: 30 }}>{children}</div>
     </>
   );
 }
