@@ -1,10 +1,11 @@
 'use client';
 
-interface ChildProps {
+// props
+interface ChildBProps {
   pData: string;
 }
 
-export default function ChildB({ pData = '' }: ChildProps) {
+export default function ChildB({ pData = '' }: ChildBProps) {
   return (
     <>
       <div>ChildB(子女元件B)</div>
