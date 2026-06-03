@@ -1,23 +1,16 @@
 'use client';
 
-import { useContext } from 'react';
-// 導入context
-import { ThemeContext } from '@/context/theme';
+// 導入context專用的自訂名稱鉤子
+import { useTheme } from '@/context/theme';
 
-export default function ComponentsThemeSwitch() {
-  // 從context值中解構出value中的值和切換函式
-  const context = useContext(ThemeContext);
+export default function ThemeSwitch() {
+  const { theme, toggleTheme } = useTheme();
 
-  // 設定型別守衛(先擋)
-  if (!context) {
-    throw Error('It must be used within ThemeProvider');
-  }
-  const { theme, toggleTheme } = context;
   return (
-    <>
+    <div>
       <button onClick={toggleTheme}>
         切換為 {theme === 'dark' ? '明亮' : '黑暗'}佈景
       </button>
-    </>
+    </div>
   );
 }
