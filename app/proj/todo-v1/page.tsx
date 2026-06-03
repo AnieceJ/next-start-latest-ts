@@ -7,6 +7,7 @@ import { Todo, FilterStatus } from './_types/todo';
 import AddForm from './_components/add-form';
 import List from './_components/list';
 import FilterBar from './_components/filter-bar';
+import ComponentsThemeSwitch from '../../_components/theme-switch';
 
 // 範例資料(mock)
 const initData = [
@@ -99,6 +100,7 @@ export default function TodoPage() {
 
   return (
     <>
+      <ComponentsThemeSwitch />
       <h1>待辨事項</h1>
       <hr />
       {/* 新增待辨事項的表單 */}

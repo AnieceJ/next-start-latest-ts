@@ -14,7 +14,7 @@ const ThemeContext = createContext<ThemeContextType | null>(null);
 ThemeContext.displayName = 'ThemeContext';
 
 // 第3-1步，建立Provider元件
-function ThemeProvider({ children }: { children: React.ReactNode }) {
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
   // 宣告狀態
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
@@ -30,6 +30,9 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
     </ThemeContext.Provider>
   );
 }
+
+// 自訂名稱鉤子
+
 
 // 導出Context和Provider元件(名稱導出)
 export { ThemeContext, ThemeProvider };
