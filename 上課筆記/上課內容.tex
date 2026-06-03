@@ -243,4 +243,8 @@ interface這邊就是設定X的型別
 
 -- Context --
 (檔案_context)
+React Context 就是一個「跨元件的全局廣播系統」。
+它允許你建立一個獨立的資料中心（Provider），只要元件被包在這個中心裡面，不管它藏得多深，都可以直接跟中心拿資料，不需要再透過中間的元件傳遞。
+
 1. 建立與導出它
+2. 在layout.tsx引入ThemeProvider並用@從根目錄去找
