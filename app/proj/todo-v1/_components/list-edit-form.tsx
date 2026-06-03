@@ -6,6 +6,7 @@ import { Todo } from '../_types/todo';
 
 export interface ListEditFormProps {
   todo: Todo;
+  onSave: (id: string, updatedText: string) => void;
 }
 
 export default function ListEditForm({ todo, onSave }: ListEditFormProps) {

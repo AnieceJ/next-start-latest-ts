@@ -11,7 +11,7 @@ export interface ListProps {
   onToggleCompleted: (id: string) => void;
   onRemove: (id: string) => void;
   onEdit: (id: string) => void;
-  onSave: (id: string) => void;
+  onSave: (id: string, updatedText: string) => void;
 }
 
 export default function List({

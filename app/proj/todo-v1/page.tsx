@@ -69,22 +69,19 @@ export default function TodoPage() {
   };
 
   // 處理文件編輯後的修改
-  const onSave = (todoId: string) => {
+  const onSave = (todoId: string, updatedText: string) => {
     const nextTodos = todos.map((todo) => {
       // 對符合條件的物件作修改
       if (todo.id === todoId) {
-        // 更新修改文字+恢復為編輯前的狀態
-        return { ...todo, text: updatedText, isEditing: true };
+        // 更新修改文字+恢復未編輯前的狀態
+        return { ...todo, text: updatedText, isEditing: false };
       } else {
-        // 其它的強制退出編輯狀態
-        return { ...todo, isEditing: false };
+        return todo;
       }
     });
     // 設定回狀態
     setTodos(nextTodos);
   };
-
-
 
   return (
     <>
