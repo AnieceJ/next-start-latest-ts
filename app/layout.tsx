@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-full flex flex-col">
-        {/* 第3-2步: 最外層元件包裹Provider元件, 可以提供Context */}
+        {/* 第3-2步: 最外層元件包裹Provider元件，提供Context給其下的後代元件 */}
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
