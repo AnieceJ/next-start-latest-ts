@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { products } from '../../../proj/product-v1/_data/products.json';
 
 export interface ProductPageProps {}
 
